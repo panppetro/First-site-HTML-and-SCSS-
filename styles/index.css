@@ -1,6 +1,19 @@
 body {
   padding: 0;
   margin: 0;
+  width: 100vw;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.burger-menu {
+  display: none;
+}
+
+.menu-checkbox {
+  display: none;
 }
 
 .header-container {
@@ -111,7 +124,7 @@ body {
   padding: 10px;
 }
 .grid-container div {
-  font-family: Roboto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 23.44px;
@@ -221,7 +234,7 @@ body {
 }
 
 .lamp {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   background-color: #E5E5E5;
   display: flex;
@@ -229,14 +242,14 @@ body {
   align-items: center;
 }
 .lamp .text {
-  padding: 10px 0px 87px 300px;
+  padding: 0px 0px 87px 100px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 .lamp h1 {
-  width: 354px;
-  height: 96px;
+  width: 100%;
+  height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
   font-size: 40px;
@@ -245,8 +258,8 @@ body {
   color: #2D3651;
 }
 .lamp .main_text {
-  width: 936px;
-  height: 319px;
+  width: 100%;
+  height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -266,9 +279,9 @@ body {
   margin-left: 50px;
 }
 .lamp img {
-  width: 281px;
-  height: 487px;
-  margin: 100px 300px 60px 80px;
+  width: 100%;
+  height: 100%;
+  margin: 100px 80px 60px 80px;
 }
 
 .form {
@@ -276,6 +289,7 @@ body {
   max-width: 1200px;
   padding: 15px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .form-container {
@@ -366,7 +380,7 @@ h2 {
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
   height: 250px;
   background-color: #2D3651;
   display: flex;
@@ -405,6 +419,15 @@ footer::after {
 }
 
 @media (max-width: 1200px) {
+  * {
+    box-sizing: border-box;
+  }
+  .burger-menu {
+    display: none;
+  }
+  .menu-checkbox {
+    display: none;
+  }
   body::-webkit-scrollbar {
     display: none;
   }
@@ -413,6 +436,7 @@ footer::after {
     height: 100%;
   }
   .header-container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -459,20 +483,21 @@ footer::after {
     color: white;
   }
   .welcome .buttons {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 1;
     gap: 20px;
-    width: 360px;
-    height: 40px;
   }
   .grid-container {
+    width: 100%;
     grid-template-columns: repeat(3, calc((100% - 40px) / 3));
     grid-template-rows: repeat(5, 350px);
     gap: 8px;
     padding: 10px;
+    padding-left: 26px;
   }
   .grid-container div:nth-child(1) {
     grid-column: 1/3;
@@ -519,22 +544,21 @@ footer::after {
     background-size: cover;
   }
   .lamp {
-    width: 100vw;
-    height: 800px;
+    width: 100%;
+    height: 100%;
     background-color: #E5E5E5;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .lamp .text {
-    padding: 10px 0px 87px 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
   .lamp h1 {
-    width: 354px;
-    height: 96px;
+    width: 100%;
+    height: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-weight: 700;
     font-size: 40px;
@@ -543,8 +567,8 @@ footer::after {
     color: #2D3651;
   }
   .lamp .main_text {
-    width: 630px;
-    height: 319px;
+    width: 100%;
+    height: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -564,12 +588,11 @@ footer::after {
     margin-left: 50px;
   }
   .lamp img {
-    width: 281px;
-    height: 487px;
-    margin: 100px 300px 60px 80px;
+    width: 100%;
+    height: 100%;
   }
   .form {
-    width: 1070px;
+    width: 100%;
   }
   .form-container {
     grid-template-columns: repeat(2, 1fr);
@@ -602,15 +625,88 @@ footer::after {
   }
 }
 @media (max-width: 599px) {
+  * {
+    box-sizing: border-box;
+  }
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 130px;
+    background-color: #2D3651;
+    width: 100%;
+    height: 100px;
+    border: 3px solid white;
+    padding: 10px 10px;
+  }
+  .menu-checkbox:checked + .burger-menu + .mobile-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-checkbox:checked + .burger-menu + .mobile-nav a {
+    color: white;
+    text-decoration: none;
+  }
+  .menu-checkbox {
+    display: none;
+  }
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    gap: 5px;
+  }
+  .burger-menu span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: white;
+    position: relative;
+    right: 28px;
+  }
+  .menu-checkbox:checked ~ .burger-menu span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-checkbox:checked ~ .burger-menu span:nth-child(2) {
+    opacity: 0.1;
+  }
+  .menu-checkbox:checked ~ .burger-menu span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
   body::-webkit-scrollbar {
     display: none;
   }
   header {
     width: 100%;
     height: 100%;
+    background-image: url(../images/img-header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(45, 54, 81, 0.5);
+    top: 0;
+    right: 0;
   }
   .header-container {
+    position: relative;
+    top: -10px;
     width: 100%;
+    height: 100%;
+    background-image: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -618,8 +714,6 @@ footer::after {
     padding-right: 0px;
     padding-left: 0;
     background-color: rgba(68, 89, 110, 0.4);
-    position: relative;
-    top: 135px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-weight: 400;
     font-size: 24px;
@@ -661,6 +755,7 @@ footer::after {
     margin: 0;
     width: 100%;
     height: 992px;
+    background-image: none;
   }
   .welcome h1 {
     position: relative;
@@ -675,32 +770,30 @@ footer::after {
   }
   .welcome .buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 40px;
     position: relative;
     z-index: 1;
     gap: 20px;
-    width: 360px;
+    width: 100%;
     height: 40px;
   }
   .welcome .buttons .btn_1 {
-    width: 360px;
-    height: 40px;
     border: 2px solid white;
-    font-size: 16px;
+    font-size: 20px;
   }
   .welcome .buttons .btn_2 {
-    width: 360px;
-    height: 40px;
     border: 2px solid white;
-    font-size: 16px;
+    font-size: 20px;
   }
   .grid-container {
+    max-width: 599px;
+    width: 100%;
+    padding-left: 26px;
     grid-template-columns: repeat(1, calc(100% - 20px));
     grid-template-rows: repeat(9, 350px);
     gap: 20px;
-    padding: 20px;
-    padding-left: 48px;
   }
   .grid-container div:nth-child(1) {
     grid-column: auto;
@@ -738,74 +831,15 @@ footer::after {
     grid-column: auto;
     grid-row: auto;
   }
-  .lamp {
-    width: 100% px;
-    height: 1182px;
-    background-color: #E5E5E5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .lamp .text {
-    padding: 10px 0px 87px 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 532px;
-  }
-  .lamp h1 {
-    width: 300px;
-    height: 69px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: 10%;
-    color: #2D3651;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .lamp .main_text {
-    width: 400px;
-    position: relative;
-    right: 50px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 5%;
-    color: #637588;
-    position: relative;
-  }
-  .lamp .main_text::after {
-    content: none;
-    position: absolute;
-    left: 100%;
-    bottom: 30%;
-    width: 0.5px;
-    height: 200px;
-    background-color: #707070;
-    margin-left: 50px;
-  }
-  .lamp img {
-    width: 281px;
-    height: 487px;
-    position: relative;
-    top: 70px;
-    left: 100px;
-  }
   .main_btn {
-    margin-top: 20px;
-    margin-bottom: 40px;
+    width: 100%;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
   }
   .main_btn a {
-    width: 532px;
+    width: 100%;
     height: 60px;
     border: 2px solid black;
     text-decoration: none;
@@ -825,6 +859,7 @@ footer::after {
     transition: 0.3s ease-in;
   }
   h2 {
+    width: 100%;
     font-family: Roboto Slab;
     font-weight: 700;
     font-size: 24px;
@@ -836,15 +871,71 @@ footer::after {
     align-items: center;
     padding-left: 24px;
   }
+  .lamp {
+    width: 100%;
+    height: 100%;
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .lamp .text {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .lamp h1 {
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 10%;
+    color: #2D3651;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .lamp .main_text {
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 5%;
+    color: #637588;
+  }
+  .lamp .main_text::after {
+    content: none;
+    position: absolute;
+    left: 100%;
+    bottom: 30%;
+    width: 0.5px;
+    height: 200px;
+    background-color: #707070;
+    margin-left: 50px;
+  }
+  .lamp img {
+    width: 100%;
+    height: 100%;
+    padding: 0px 100px;
+  }
   .dark-bg {
     background-color: #2D3651;
     width: 100%;
+    box-sizing: border-box;
   }
   .form {
     width: 100%;
   }
   .form-container {
-    width: 560px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -889,11 +980,36 @@ footer::after {
     background-color: #D66926;
   }
   .posts-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 450px);
-    gap: 8px;
     width: 100%;
-    padding-left: 80px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+  }
+  .posts-grid .post .post-image {
+    height: 300px;
+  }
+  .posts-grid .post .post-image img {
+    width: 100%;
+    height: 100%;
+  }
+  .posts-grid .post .post-content {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px;
+    background-color: #EEEEEE;
+  }
+  .posts-grid .post .post-content h3 {
+    font-size: 18px;
+    text-align: center;
+    color: #637588;
+  }
+  .posts-grid .post .post-content p {
+    font-size: 16px;
+    text-align: center;
+    color: #637588;
   }
   .posts-grid div:nth-child(1) {
     grid-column: auto;
@@ -912,5 +1028,43 @@ footer::after {
   }
   .posts-grid div:nth-child(6) {
     grid-column: auto;
+  }
+  footer {
+    width: 100%;
+    height: 250px;
+    background-color: #2D3651;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer p {
+    position: relative;
+    top: 40px;
+  }
+  footer .text_1 {
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 29.9%;
+    text-align: center;
+    color: #637588;
+    margin: 0;
+  }
+  footer .text_2 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 5%;
+    text-align: center;
+    color: white;
+    margin: 0;
+  }
+  footer::after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 2px;
+    background-color: white;
   }
 }/*# sourceMappingURL=index.css.map */

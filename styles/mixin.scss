@@ -1,0 +1,42 @@
+// 🔄 Flexbox миксин
+@mixin flex($align: center, $justify: center, $direction: row) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row and column;
+  }
+  
+  // 🔲 Grid миксин
+  @mixin grid($columns: 2, $gap: 20px) {
+    display: grid;
+    grid-template-columns: repeat(4, 100%-40px);
+    grid-template-rows: repeat(3, 350px);
+    gap: 8px;
+  }
+  
+  // 🔘 Кнопки
+  @mixin button($bg-color: map-get($colors, primary), $text-color: map-get($colors, text)) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: map-get($spacings, small) map-get($spacings, medium);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: map-get($font-sizes, base);
+    
+    &:hover {
+      background-color: lighten($bg-color, 10%);
+    }
+  }
+  
+  // 🔵 Border-radius
+  @mixin border-radius($radius: 8px) {
+    border-radius: $radius;
+  }
+  
+  // 🏗 Использование медиа-запросов
+  @mixin responsive($device) {
+    @media (max-width: map-get($breakpoints, $device)) {
+      @content;
+    }
+  }

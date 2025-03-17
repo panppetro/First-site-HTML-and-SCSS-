@@ -1,0 +1,26 @@
+$colors: (
+  primary: rgb(45, 54, 81),
+  secondary: #D66926,
+  background: #E5E5E5,
+  text: #FFFFFF
+);
+
+$font-family: 'Roboto', sans-serif;
+$font-sizes: (
+  base: 24px,
+  h1: 48px,
+  h2: 36px
+);
+
+$spacings: (
+  small: 10px,
+  medium: 20px,
+  large: 44px
+);
+
+$breakpoints: (
+  mobile: 599px,
+  tablet: 1200px,
+  desktop: 1440px
+);
+

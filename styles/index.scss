@@ -5,64 +5,22 @@
     }
     
     .mobile-nav {
-    display: none;
+        display: none;
     }
  
      .burger-menu {
-    display: none;
+        display: none;
     }
  
      .menu-checkbox {
-     display: none;
+        display: none;
     }
  
-    .header-container {
     .header-container {
         padding: $header-padding;
         font-size: $font-size-medium;
         @include flex-center;
         @include text-style($font-size-medium, 20px, 8.5%, $white);
-      }    
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    svg {
-        display: none;
-    }
-
-    padding: 38px;
-    padding-top: 0px;
-
-    position: relative;
-    top: 20px;
-    z-index: 1;
-
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 20px;
-    letter-spacing: 8.5%;
-    text-align: center;
-    color: white;
-
-    ul {
-        display: flex;
-        gap: 41px;
-
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-
-
-    li:hover {
-            color: #D66926;
-        }
-
-}
-
     }
     
     .welcome {
@@ -153,38 +111,25 @@
         top: 0;
         right: 0;
     }
+
     }
     
     .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, calc((100% - 40px) / 4));
-    grid-template-rows: repeat(3, 350px);
-    gap: 8px;
-    padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, calc((100% - 40px) / 4));
+        grid-template-rows: repeat(3, 350px);
+        gap: 8px;
+        padding: 10px;
 
     .grid-container div {
         @include background-image("../images/img-html.png");
         @include text-style(20px, 23.44px, 10%, $white);
     }  
-    
-    div {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 23.44px;
-        letter-spacing: 10%;
-        color: white;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    p {
         position: relative;
-
-        p{
-            position: relative;
-            z-index: 2;
-        }
-
+        z-index: 2;
+    }
         transition: 0.3s ease-in;
 
         &::after {
@@ -196,75 +141,73 @@
             top: 0;
             right: 0;
         }
-    }
 
-    div:hover {
-        color: #D66926;
-        &::after {
-            background: rgba(45, 54, 81, 0.8);
+        div:hover {
+            color: #D66926;
+            &::after {
+                background: rgba(45, 54, 81, 0.8);
+            }
+        }
+    
+        div:nth-child(1) {
+            grid-column: 1/3;
+            background-image: url(../images/img-html.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        div:nth-child(2) {
+            background-image: url(../images/img-css.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        div:nth-child(3) {
+            background-image: url(../images/img-markup.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        div:nth-child(4) {
+            background-image: url(../images/img-webdesign.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        div:nth-child(5) {
+            grid-column: 2/4;
+            background-image: url(../images/img-qa.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        div:nth-child(6) {
+            grid-row: 2/4;
+            grid-column: 4; 
+            background-image: url(../images/img-codding.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        div:nth-child(7) {
+            background-image: url(../images/img-adaptability.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        div:nth-child(8) {
+            background-image: url(../images/img-php.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        div:nth-child(9) {
+            background-image: url(../images/img-seo.png);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     }
 
-    div:nth-child(1) {
-        grid-column: 1/3;
-        background-image: url(../images/img-html.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    
-    div:nth-child(2) {
-        background-image: url(../images/img-css.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    div:nth-child(3) {
-        background-image: url(../images/img-markup.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    div:nth-child(4) {
-        background-image: url(../images/img-webdesign.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    div:nth-child(5) {
-        grid-column: 2/4;
-        background-image: url(../images/img-qa.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    div:nth-child(6) {
-        grid-row: 2/4;
-        grid-column: 4; 
-        background-image: url(../images/img-codding.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    div:nth-child(7) {
-        background-image: url(../images/img-adaptability.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    div:nth-child(8) {
-        background-image: url(../images/img-php.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    div:nth-child(9) {
-        background-image: url(../images/img-seo.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    }
-    
     .main_btn {
         margin-top: 20px;
         margin-bottom: 40px;
@@ -520,7 +463,7 @@
     }
 
     
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
 
     * {
         box-sizing: border-box;
@@ -775,10 +718,8 @@
     align-items: center;
     
     a {
-
         color: white;
         text-decoration: none;
-
     }
     
     }

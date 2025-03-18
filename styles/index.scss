@@ -1,22 +1,22 @@
-body {
+    body {
     padding: 0;
     margin: 0;
     width: 100vw;
-}
-
-.mobile-nav {
+    }
+    
+    .mobile-nav {
     display: none;
- }
-
- .burger-menu {
+    }
+ 
+     .burger-menu {
     display: none;
- }
-
- .menu-checkbox {
+    }
+ 
+     .menu-checkbox {
      display: none;
- }
-
-.header-container {
+    }
+ 
+    .header-container {
     .header-container {
         padding: $header-padding;
         font-size: $font-size-medium;
@@ -63,9 +63,9 @@ body {
 
 }
 
-}
-
-.welcome {
+    }
+    
+    .welcome {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,9 +153,9 @@ body {
         top: 0;
         right: 0;
     }
-}
-
-.grid-container {
+    }
+    
+    .grid-container {
     display: grid;
     grid-template-columns: repeat(4, calc((100% - 40px) / 4));
     grid-template-rows: repeat(3, 350px);
@@ -263,9 +263,9 @@ body {
         background-size: cover;
     }
 
-}
-
-.main_btn {
+    }
+    
+    .main_btn {
         margin-top: 20px;
         margin-bottom: 40px;
 
@@ -299,9 +299,9 @@ body {
             }
         }
 
-}
-
-.lamp {
+    }
+    
+    .lamp {
             width: 100%;
             height: 100%;
 
@@ -362,18 +362,18 @@ body {
             margin: 100px 80px 60px 80px ;
         }
     
-}
-
-.form {
+    }
+    
+    .form {
     margin: 0 auto;
     max-width: 1200px;
     padding: 15px;
     width: 100%;
 
     box-sizing: border-box;
-}
+    }
 
-.form-container {
+    .form-container {
     display: grid;
     // grid-template-columns: repeat(3, calc((100% -30px - 40px) / 3));
     grid-template-columns: repeat(3, 1fr);
@@ -406,14 +406,14 @@ body {
     button:hover, button:active {
         background-color: #D66926;
     }
-}
+    }
 
-.dark-bg {
+    .dark-bg {
     background-color: #2D3651;
     width: 100vw;
-}
+    }
 
-h2 {
+    h2 {
     padding-top: 100px;
     padding-left: 100px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -422,9 +422,9 @@ h2 {
     line-height: 48px;
     letter-spacing: 10%;
     color: #2D3651;
-}
+    }
 
-.posts-grid {
+    .posts-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     // grid-template-rows: repeat(2, 550px); тут воно чомусь не хоче з цією командою робити відступи з верху/вниз
@@ -472,9 +472,9 @@ h2 {
         }
 
     }
-}
+    }
 
-footer {
+    footer {
     width:100%;
     height: 250px;
     background-color: #2D3651;
@@ -517,7 +517,7 @@ footer {
             background-color: white;
 
         }
-}
+    }
 
     
 @media (max-width: 1200px){
@@ -741,22 +741,33 @@ footer {
 
 
 @media (max-width: 599px) {
-* {
+    * {
         box-sizing: border-box;
-}
-
-.mobile-nav {
+    }
+        
+    .mobile-nav {
     display: none;
     position: absolute;
     top: 130px;
-    background-color:#2D3651;
+    background-color: $primary-color;
     width: 100%;
     height: 100px;
-    border: 3px solid white;
-    padding: 10px 10px;
+    border: $border-width solid $white-color;
+    padding: 10px;
+    
+    &.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      a {
+        color: $white-color;
+        text-decoration: none;
+      }
     }
-
-.menu-checkbox:checked + .burger-menu + .mobile-nav {
+    }
+    
+    .menu-checkbox:checked + .burger-menu + .mobile-nav {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -771,12 +782,12 @@ footer {
     }
     
     }
-
-.menu-checkbox {
+    
+    .menu-checkbox {
     display: none;
     }
-
-.burger-menu {
+    
+    .burger-menu {
     @include flex-center(column, 5px);
     width: 30px;
     
@@ -789,65 +800,53 @@ footer {
       right: 28px;
     }
     }
-
-.burger-menu span {
-    display: block;
-    height: 4px;
-    width: 100%;
-    background: white;
     
-    position: relative;
-    right: 28px;
-    }
-
     .menu-checkbox:checked ~ .mobile-nav {
         right: 0;
     }
-
+    
     .menu-checkbox:checked ~ .burger-menu span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
-
+          
     .menu-checkbox:checked ~ .burger-menu span:nth-child(2) {
         opacity: 0.1;
     }
-
+          
     .menu-checkbox:checked ~ .burger-menu span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
-
+    
     body {
         width: 100%;
         padding: 0;
         margin: 0;
     }
-
+    
     body::-webkit-scrollbar {
         display: none; 
     }
-
+    
     header {
         width: 100%;
         height: 100%;
-
         background-image: url(../images/img-header.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-
         position: relative;
-    
+      
         &::after {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background: rgba(45, 54, 81, 0.5);
-            top: 0;
-            right: 0;
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background: $dark-overlay;
+          top: 0;
+          right: 0;
         }
     }
-
+    
     .header-container {
         @include flex-center(row, 20px);
         position: relative;
@@ -885,7 +884,7 @@ footer {
           color: $secondary-color;
         }
     }
-
+    
     .welcome {
         @include flex-center(column, 20px);
         width: 100%;
@@ -906,7 +905,7 @@ footer {
           }
         }
     }
-      
+          
     .grid-container {
         max-width: 599px;
 
@@ -925,7 +924,7 @@ footer {
             }
         }
     }
-
+    
     .main_btn {
     width: 100%;
     padding: 10px;
@@ -962,7 +961,7 @@ footer {
     }
 
     }
-
+    
     h2 {
         width: 100%;
 
@@ -979,7 +978,7 @@ footer {
 
         padding-left: 24px;
     }
-
+    
     .lamp {
         width: 100%;
         height: 100%;
@@ -1058,18 +1057,18 @@ footer {
             // left: 100px;
         }
 
-}
-
+    }
+    
     .dark-bg {
         background-color: #2D3651;
         width: 100%;
         box-sizing: border-box;
     }
-
+    
     .form {
         width: 100%;
     }
-
+    
     .form-container {
         width: 100%;
         display: grid;
@@ -1100,7 +1099,7 @@ footer {
           background-color: $secondary-color;
         }
     }
-
+    
     .posts-grid {
         // max-width: 599px;
         width: 100%;
@@ -1180,7 +1179,7 @@ footer {
         }
 
     }
-
+    
     footer {
         width: 100%;
         height: 250px;
